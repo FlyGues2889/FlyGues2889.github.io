@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FlyGues的小站</title>
+    <link rel="shortcut icon" href="assets/image/logo.svg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/mdui.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/mdui.global.js"></script>
+    <script src="js/contentList.js"></script>
+
+    <!-- Filled -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Outlined -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- Rounded -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Sharp -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!-- Two Tone -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+</head>
+
+<body id="app" class="mdui-theme-auto">
+    <mdui-linear-progress class="loading" style="position: fixed;top: 4rem;z-index: 90;"></mdui-linear-progress>
+
+    <mdui-layout class="screen" style="display: flex;">
+        <mdui-top-app-bar scroll-behavior="elevate" scroll-target="mdui-layout-main"
+            style="background-color: rgb(var(--mdui-color-surface-container));">
+            <!-- <mdui-button-icon icon="menu"></mdui-button-icon> -->
+            <mdui-top-app-bar-title style="margin-left: 0.5rem;display: flex;align-items: center;">
+                FlyGues <span style="font-size: 1.2rem;">的小站</span>
+            </mdui-top-app-bar-title>
+            <div style="flex-grow: 1"></div>
+            <mdui-dropdown>
+                <mdui-button-icon slot="trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 15q1.25 0 2.125-.875T15 12t-.875-2.125T12 9t-2.125.875T9 12t.875 2.125T12 15m0 2q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12t.288-.712T2 11h2q.425 0 .713.288T5 12t-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12t.288-.712T20 11h2q.425 0 .713.288T23 12t-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1t.713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19t.713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7t-.687.288t-.713-.288M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288M12 12" />
+                    </svg>
+                </mdui-button-icon>
+                <mdui-menu>
+                    <mdui-menu-item
+                        onclick="javascript:document.querySelector('#app').className = 'mdui-theme-auto';">系统默认</mdui-menu-item>
+                    <mdui-menu-item
+                        onclick="javascript:document.querySelector('#app').className = 'mdui-theme-light';">浅色模式</mdui-menu-item>
+                    <mdui-menu-item
+                        onclick="javascript:document.querySelector('#app').className = 'mdui-theme-dark';">深色模式</mdui-menu-item>
+                </mdui-menu>
+            </mdui-dropdown>
+        </mdui-top-app-bar>
+
+        <mdui-layout-main id="app">
+            <div id="home" class="page">
+                <div class="bkg" id="top"></div>
+
+                <mdui-avatar class="home-avatar">
+                    <img src="assets/image/avatar.png" width="100%" alt="FlyGues">
+                </mdui-avatar><br>
+                <h3 class="title">FlyGues</h3>
+
+                <div class="topic">
+                    <mdui-chip>前端</mdui-chip>
+                    <mdui-chip>HTML</mdui-chip>
+                    <mdui-chip>javaScript</mdui-chip>
+                    <mdui-chip>UI/UX</mdui-chip>
+                    <mdui-chip>Minecraft</mdui-chip>
+                    <mdui-chip>小鸟游六花</mdui-chip>
+                    <mdui-chip>中二病也要谈恋爱</mdui-chip>
+                </div>
+
+                <mdui-divider style="margin: 4rem;"></mdui-divider>
+
+                <div id="message-container"></div>
+            </div>
+
+            <div id="fileAndDemo" class="page mdui-prose" style="display: none;">
+                <div id="message-container-detail"></div>
+            </div>
+        </mdui-layout-main>
+
+        <mdui-navigation-bar label-visibility="unlabeled" class="mdui-bottom-nav mdui-color-indigo" value="home">
+            <mdui-navigation-bar-item href="javascript:void(0);" value="home" onclick="navigate('home')"
+                class="mdui-ripple mdui-bottom-nav-item mdui-ripple">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" />
+                </svg>
+                <svg slot="active-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M4 19v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-3q-.425 0-.712-.288T14 20v-5q0-.425-.288-.712T13 14h-2q-.425 0-.712.288T10 15v5q0 .425-.288.713T9 21H6q-.825 0-1.412-.587T4 19" />
+                </svg>
+            </mdui-navigation-bar-item>
+            <mdui-navigation-bar-item href="javascript:void(0);" value="demo" onclick="navigate('fileAndDemo')"
+                class="mdui-ripple mdui-bottom-nav-item mdui-ripple">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M9 12q-.425 0-.712-.288T8 11t.288-.712T9 10h6q.425 0 .713.288T16 11t-.288.713T15 12zm0-4q-.425 0-.712-.288T8 7t.288-.712T9 6h6q.425 0 .713.288T16 7t-.288.713T15 8zm-3 6h7.5q.725 0 1.35.313t1.05.887l2.1 2.75V4H6zm0 6h11.05l-2.725-3.575q-.15-.2-.362-.312T13.5 16H6zm12 2H6q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h12q.825 0 1.413.588T20 4v16q0 .825-.587 1.413T18 22M6 20V4zm0-4v-2z" />
+                </svg>
+                <svg slot="active-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M9 12h6q.425 0 .713-.288T16 11t-.288-.712T15 10H9q-.425 0-.712.288T8 11t.288.713T9 12m0-4h6q.425 0 .713-.288T16 7t-.288-.712T15 6H9q-.425 0-.712.288T8 7t.288.713T9 8m10.95 12.475L15.9 15.2q-.425-.575-1.05-.887T13.5 14H4V4q0-.825.588-1.412T6 2h12q.825 0 1.413.588T20 4v16q0 .125-.012.238t-.038.237M6 22q-.825 0-1.412-.587T4 20v-4h9.5q.25 0 .463.113t.362.312l4.2 5.5q-.125.05-.262.063T18 22z" />
+                </svg>
+            </mdui-navigation-bar-item>
+        </mdui-navigation-bar>
+    </mdui-layout>
+</body>
+<script>
+    const loading = document.querySelector(".loading");
+    const main = document.querySelector(".screen")
+    // 页面加载完成后隐藏进度指示条
+    window.onload = function () {
+        loading.style.display = "none";
+    };
+
+    function navigate(pageId) {
+        var pages = document.querySelectorAll('.page');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
+        document.getElementById(pageId).style.display = 'block';
+    }
+</script>
+
+</html>
