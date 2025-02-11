@@ -70,6 +70,31 @@ message-container {
     max-width: 40rem;
 }
 
+div#message-container-detail {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    margin-top: 2em;
+    box-shadow: 0 2.75px 9px 5px rgba(var(--mdui-color-shadow), 19%), 0 0.25px 3px 6px rgba(var(--mdui-color-shadow), 3.9%);
+
+    mdui-card.msgContainer {
+        padding: 2rem;
+        box-shadow: none;
+        border-radius: 2rem;
+        border: 2px solid rgb(var(--mdui-color-inverse-on-surface));
+        max-width: none;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    mdui-divider {
+        margin: 1rem 0;
+    }
+}
+
 @media (min-width: 616px) {
     mdui-navigation-bar {
         background-color: rgb(var(--mdui-color-surface-container));
@@ -101,6 +126,10 @@ message-container {
 
     .home-avatar {
         border-radius: 5vw;
+    }
+
+    div#message-container-detail {
+        width: 100vw;
     }
 }
 
@@ -219,28 +248,4 @@ mdui-navigation-bar {
 
     word-spacing: 0.3rem;
     line-height: 2rem;
-}
-
-div#message-container-detail {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
-    margin-top: 2em;
-
-    mdui-card.msgContainer {
-        padding: 2rem;
-        box-shadow: none;
-        border-radius: 2rem;
-        border: 2px solid rgb(var(--mdui-color-inverse-on-surface));
-        max-width: none;
-    }
-
-    h2 {
-        margin-bottom: 1rem;
-    }
-
-    mdui-divider {
-        margin: 1rem 0;
-    }
 }
